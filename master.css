@@ -1,0 +1,824 @@
+* {
+  font-family: 'Ubuntu', sans-serif;
+  box-sizing: border-box;
+}
+
+:root {
+  --p-color: #002046;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eef5ff;
+}
+
+@media (max-width:767px) {
+  body {
+    display: block;
+  }
+}
+
+.step-form {
+  display: flex;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+@media (max-width:767px) {
+  .step-form{
+    border-radius: 0;
+  }
+}
+.step-form>img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.step-form .two {
+  display: none;
+}
+
+@media (max-width:767px) {
+  .step-form>.one {
+    display: none;
+  }
+
+  .step-form .two {
+    display: block;
+    height: 180px;
+    transform: scaleX(6.5);
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+}
+
+@media (max-width:767px) {
+  .step-form {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    padding-top: 0;
+  }
+}
+
+
+
+
+
+.steps .step-1,
+.steps .step-2,
+.steps .step-3,
+.steps .step-4 {
+  display: flex;
+  margin: 20px;
+  align-items: center;
+  position: relative;
+  z-index: 99;
+}
+
+
+
+@media (max-width:767px) {
+  .steps {
+    display: flex;
+  }
+}
+
+.steps .step-1.active .number,
+.steps .step-2.active .number,
+.steps .step-3.active .number,
+.steps .step-4.active .number {
+  background-color: #bee2f8;
+  color: #002046;
+}
+
+@media (max-width:767px) {
+
+  .steps .step-1 .number,
+  .steps .step-2 .number,
+  .steps .step-3 .number,
+  .steps .step-4 .number {
+    margin: 0 10px;
+  }
+
+}
+
+.steps .step-1 .number,
+.steps .step-2 .number,
+.steps .step-3 .number,
+.steps .step-4 .number {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid white;
+  color: white;
+  font-weight: 700;
+}
+
+.steps .step-1 .text,
+.steps .step-2 .text,
+.steps .step-3 .text,
+.steps .step-4 .text {
+  margin-left: 20px;
+}
+
+@media (max-width:767px) {
+
+  .steps .step-1 .text,
+  .steps .step-2 .text,
+  .steps .step-3 .text,
+  .steps .step-4 .text {
+    display: none;
+  }
+}
+
+.steps .step-1 .text span:first-child,
+.steps .step-2 .text span:first-child,
+.steps .step-3 .text span:first-child,
+.steps .step-4 .text span:first-child {
+  display: block;
+  color: #9594ff;
+  margin-bottom: 5px;
+}
+
+.steps .step-1 .text span:last-child,
+.steps .step-2 .text span:last-child,
+.steps .step-3 .text span:last-child,
+.steps .step-4 .text span:last-child {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.steps {
+  position: relative;
+  width: 220px;
+  height: 450px;
+}
+
+@media (max-width:767px) {
+  .steps {
+    width: fit-content;
+    height: fit-content;
+  }
+}
+
+
+
+/* start step-1 */
+
+.info {
+  margin: 50px 0 0 70px;
+}
+
+@media (max-width:767px) {
+
+  .info {
+    margin: 0;
+    background-color: white;
+    padding: 20px;
+    position: relative;
+    border-radius: 10px;
+  }
+}
+
+.all>div.appear {
+  display: block;
+}
+
+.all>div {
+  display: none;
+}
+
+.info .title span:first-child {
+  display: block;
+  font-size: 25px;
+  font-weight: 500;
+  color: #002046;
+}
+
+.info .title span:last-child {
+  display: block;
+  color: #9e9ea6;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.info form {
+  display: block;
+  position: relative;
+}
+
+.info form .fail {
+  color: #d42d49;
+  font-weight: 500;
+  position: absolute;
+  right: 0;
+  display: none;
+}
+
+.info form input:not(.submit) {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  outline: none;
+  display: block;
+  margin: 10px 0 30px 0;
+  padding: 10px;
+}
+
+.info form input.submit1 {
+  display: block;
+  margin-left: auto;
+  width: 120px;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  margin: 65px 0 0 auto;
+  background-color: #002046;
+}
+
+/* @media (max-width:767px) {
+  .info form>div {
+    position: absolute;
+    right: -40px;
+    bottom: -107%;
+    background-color: white;
+    width: calc(100% + 80px);
+    padding: 10px;
+  }
+  .info form input.submit1{
+    margin: 0 0 0 auto;
+    width: 80px;
+    font-size: 12px;
+    height: 35px;
+  }
+} */
+
+.info form label {
+  color: #002046;
+  display: block;
+  margin: 10px 0 -5px 0;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+
+/* end step-1 */
+/* start step-2 */
+.info-2 {
+  margin: 50px 0 0 70px;
+}
+
+@media (max-width:767px) {
+
+  .info-2 {
+    margin: 0;
+    background-color: white;
+    padding: 20px;
+    position: relative;
+    border-radius: 10px;
+  }
+}
+
+.info-2 .title span:first-child {
+  display: block;
+  font-size: 25px;
+  font-weight: 500;
+  color: #002046;
+}
+
+@media (max-width:767px) {
+  .info-2 .title span:first-child {
+    text-align: center;
+  }
+}
+
+.info-2 .title span:last-child {
+  display: block;
+  color: #9e9ea6;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+@media (max-width:767px) {
+  .info-2 .title span:last-child {
+    text-align: center;
+  }
+}
+
+.info-2 .plan {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+}
+
+@media (max-width:767px) {
+  .info-2 .plan {
+    flex-direction: column;
+  }
+}
+
+.info-2 .plan>div.active {
+  border: 1px solid blue;
+  background-color: #f8f9fe;
+}
+
+.info-2 .plan>div {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  margin-right: 10px;
+  width: 150px;
+  height: 150px;
+  transition: .5s;
+}
+
+@media (max-width:767px) {
+  .info-2 .plan>div {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+.info-2 .plan>div:hover {
+  border: 1px solid blue;
+}
+
+.info-2 .plan>div img {
+  display: block;
+  margin-bottom: 20px;
+}
+
+@media (max-width:767px) {
+  .info-2 .plan>div img {
+    margin: 0;
+  }
+}
+
+.info-2 .plan>div .type {
+  color: #002046;
+  font-size: 20px;
+  display: block;
+  margin-top: 30px;
+}
+
+@media (max-width:767px) {
+  .info-2 .plan>div .type {
+    margin: 0 0 0 10px;
+
+  }
+}
+
+.info-2 .plan>div .price {
+  color: #999;
+  font-weight: 500;
+}
+
+@media (max-width:767px) {
+  .info-2 .plan>div .type {
+    margin-left: 5px;
+  }
+}
+
+.info-2 .plan>div .more {
+  color: #002046;
+  margin-top: 20px;
+  font-weight: 500;
+  display: none;
+}
+
+@media (max-width:767px) {
+  .info-2 .plan>div .more {
+    width: 100%;
+    margin-top: 0px;
+  }
+}
+
+.info-2 form .choose {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  background-color: #f8f9fe;
+  padding: 10px 0;
+}
+
+.info-2 form [type="checkbox"] {
+  appearance: none;
+  width: 40px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: #002046;
+  display: block;
+  position: relative;
+}
+
+.info-2 form [type="checkbox"]::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 3px;
+  transition: .5s;
+}
+
+.info-2 form [type="checkbox"]:checked::before {
+  transform: translate(22px, -50%);
+}
+
+.info-2 form label.active {
+  font-weight: bold;
+  color: #002046;
+}
+
+.info-2 form label:not(.active) {
+  font-weight: bold;
+  color: #999;
+}
+
+.info-2 form div:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.info-2 form .submit2 {
+  display: block;
+  width: 120px;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: #002046;
+}
+
+.info-2 form .back {
+  display: block;
+  border: none;
+  background-color: white;
+  font-weight: 700;
+  font-size: 17px;
+  color: #002046;
+  cursor: pointer;
+}
+
+.info-2 form .back:hover {
+  color: #002046;
+  opacity: .5;
+}
+
+/* end step-2 */
+
+/* start step-2 */
+.info-3 {
+  margin: 50px 0 0 70px;
+}
+
+@media (max-width:767px) {
+
+  .info-3 {
+    margin: 0;
+    background-color: white;
+    padding: 20px;
+    position: relative;
+    border-radius: 10px;
+  }
+}
+
+.info-3 .title span:first-child {
+  display: block;
+  font-size: 25px;
+  font-weight: 500;
+  color: #002046;
+}
+
+@media (max-width:767px) {
+  .info-3 .title {
+    text-align: center;
+  }
+}
+
+.info-3 .title span:last-child {
+  display: block;
+  color: #9e9ea6;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.info-3 .box {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  padding: 20px;
+  border: 1px solid #443dfe;
+  width: 400px;
+}
+
+@media (max-width:767px) {
+  .info-3 .box {
+    width: 100%;
+  }
+}
+
+.info-3 .box.active {
+  background-color: #f8f9fe;
+}
+
+.info-3 .box [type="checkbox"] {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 2px;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-3 .box [type="checkbox"]::before {
+  content: "\e876";
+  font-family: "Material Symbols Outlined";
+  color: white;
+}
+
+.info-3 .box [type="checkbox"]:checked {
+  background-color: #443dfe;
+  border: none;
+}
+
+.info-3 .box .pro span:first-child {
+  display: block;
+  color: var(--p-color);
+  font-weight: 500;
+  font-size: 18px;
+}
+
+@media (max-width:767px) {
+  .info-3 .box .pro span:first-child {
+    font-size: 15px;
+  }
+}
+
+.info-3 .box .pro span:last-child {
+  color: #999;
+  font-size: 13px;
+}
+
+@media (max-width:767px) {
+  .info-3 .box .pro span:last-child {
+    font-size: 12px;
+  }
+}
+
+.info-3 .box .cost {
+  color: #443dfe;
+}
+
+.info-3 form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info-3 form .submit3 {
+  display: block;
+  width: 120px;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: #002046;
+}
+
+.info-3 form .back2 {
+  display: block;
+  border: none;
+  background-color: white;
+  font-weight: 700;
+  font-size: 17px;
+  color: #002046;
+  cursor: pointer;
+}
+
+.info-3 form .back:hover {
+  color: #002046;
+  opacity: .5;
+}
+
+/* end step-3 */
+
+/* start step-4 */
+.info-4 {
+  margin: 50px 0 0 70px;
+}
+
+@media (max-width:767px) {
+
+  .info-4 {
+    margin: 0;
+    background-color: white;
+    padding: 20px;
+    position: relative;
+    border-radius: 10px;
+  }
+}
+
+.info-4 .title span:first-child {
+  display: block;
+  font-size: 25px;
+  font-weight: 500;
+  color: #002046;
+}
+
+.info-4 .title span:last-child {
+  display: block;
+  color: #9e9ea6;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.total {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f8f9fe;
+  margin-top: 20px;
+}
+
+.total .total1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+
+.total .total1>div span:first-child {
+  display: block;
+  color: var(--p-color);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.total .total1>div span:last-child {
+  display: block;
+  margin: 1px 0;
+  color: blue;
+}
+
+.total .total1>span {
+  color: var(--p-color);
+  font-weight: 500;
+}
+
+
+
+.total2 div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.total2 div span:first-child {
+  color: #999;
+}
+
+.total2 div span:last-child {
+  color: #002046;
+  font-weight: 500;
+}
+
+.final {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.final span:first-child {
+  color: #999;
+}
+
+.final span:last-child {
+  color: #443dfe;
+  font-weight: 500;
+}
+
+.info-4 form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.info-4 form .submit4 {
+  display: block;
+  width: 120px;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: #002046;
+}
+
+.info-4 form .back3 {
+  display: block;
+  border: none;
+  background-color: white;
+  font-weight: 700;
+  font-size: 17px;
+  color: #002046;
+  cursor: pointer;
+}
+
+
+/* end step-4 */
+
+
+.end {
+  padding: 20px;
+  display: block;
+  top: 50%;
+  position: relative;
+  transform: translateY(-50%);
+}
+
+@media (max-width:767px) {
+
+  .end {
+    margin: 0;
+    background-color: white;
+    padding: 20px;
+    position: relative;
+    border-radius: 10px;
+    top: 0;
+    transform: translate(0, 0px);
+  }
+}
+
+.end img {
+  display: block;
+  margin: auto;
+}
+
+@media (max-width:767px) {
+
+  .end img {
+    margin: 20px auto;
+    width: 90px;
+  }
+}
+
+.end span:not(:last-child) {
+  display: block;
+  color: var(--p-color);
+  font-size: 25px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.end span:last-child {
+  color: #999;
+  white-space: pre-line;
+  text-align: center;
+  display: block;
+}
+
+@media (max-width:767px) {
+  .end span:last-child {
+    white-space: normal;
+    padding: 50px 0;
+  }
+}
